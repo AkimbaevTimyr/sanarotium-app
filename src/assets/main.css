@@ -1,0 +1,36 @@
+@import './base.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+.wrapper {
+    max-width: 1280px;
+    width: 100%;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    align-items: center;
+}
+
+@media screen and (max-width: 1000px) {
+    max-width: 768px;
+}
+
+
+.link {
+
+}
+
+.link:hover {
+    border-bottom: 2px solid #337ab7;
+    transition: ease-in;
+}
