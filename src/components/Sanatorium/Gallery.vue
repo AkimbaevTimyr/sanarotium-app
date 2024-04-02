@@ -19,9 +19,13 @@ export default {
   data() {
     let modal = false;
     let currentImg = null;
+    let modalWidth = 0;
+    let modalHeight = 0;
     return {
       modal,
-      currentImg
+      currentImg,
+      modalHeight,
+      modalWidth
     }
   },
   setup() {
@@ -34,15 +38,22 @@ export default {
     handleClick(img) {
       this.currentImg = img.src;
       this.modal = true;
+      document.body.classList.add('modal-open');
     },
     closeModal() {
       this.modal = false;
+      document.body.classList.remove('modal-open');
     },
     nextImg() {
       this.currentImg = (this.galleryImages[this.indexImg + 1]).src;
     },
     previousImg() {
       this.currentImg = (this.galleryImages[this.indexImg -1]).src;
+    },
+    updateModalSize(event) {
+      const img = this.$refs.modalImage;
+      this.modalWidth = img.naturalWidth;
+      this.modalHeight = img.naturalHeight;
     }
   },
   computed: {
@@ -68,21 +79,26 @@ export default {
         >
       </div>
     </div>
-<!--    модальное окно с фотографиями-->
+    <!--    модальное окно с фотографиями-->
     <div class="modal" v-if="modal">
-      <div class="modal-window">
-          <div class="gallery-modal-image">
-            <div @click="previousImg()" class="switcher-color"><</div>
+      <div
+          class="modal-window"
+          v-on-click-outside="closeModal"
+
+      >
+          <div class="gallery-modal-image"  :style="{
+            width: modalWidth + 'px',
+            height: modalHeight + 'px'
+          }">
             <Transition name="fade">
-              <div>
                 <img
+                    ref="modalImage"
+                    @load="updateModalSize"
                     class="modal-image"
                     :src="getImageUrl('../assets/', currentImg)"
                     alt="Room Image"
                 >
-              </div>
             </Transition>
-            <div @click="nextImg()" class="switcher-color">></div>
             <div>
               <button @click="modal = !modal" class="modal_button">
                 <svg id="cross-thin-white" width="25px" height="25px">
@@ -92,6 +108,10 @@ export default {
                 </svg>
               </button>
             </div>
+          </div>
+          <div class="gallery-modal-buttons">
+            <div @click="previousImg()" class="switcher-color">Предыдущая</div>
+            <div @click="nextImg()" class="switcher-color">Следующая</div>
           </div>
       </div>
     </div>
@@ -135,7 +155,7 @@ export default {
   max-width: 175px;
   width: 100%;
   max-height: 128px;
-  height: auto;
+  height: 100%;
 }
 
 .sanatorium-gallery-left img {
@@ -160,22 +180,29 @@ export default {
 }
 
 .modal-window {
+  background-color: #fff; /* Белый фон для модального окна */
+  padding: 20px; /* Отступы внутри модального окна */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для модального окна */
+  z-index: 1001; /* Убедитесь, что модальное окно находится выше фона */
+  border-radius: 20px;
 }
 
 .gallery-modal-image {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-image {
   width: 100%;
   height: 100%;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .switcher-color {
-  color:  white;
+  color:  black;
   cursor: pointer;
-  font-size: 120px;
+  font-size: 20px;
 }
 
 .modal_button {
@@ -192,6 +219,12 @@ export default {
   transition-timing-function: ease;
   will-change: auto;
   position: absolute;
+}
+
+.gallery-modal-buttons{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
 }
 
 @media (max-width: 1280px) {
@@ -230,12 +263,15 @@ export default {
   }
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active в версии <2.1.8 */ {
-  opacity: 0;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s, transform 1s;
 }
 
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(0);
+}
 
 </style>

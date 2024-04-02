@@ -4,17 +4,18 @@ import Footer from "@/components/Footer.vue";
 import {sanatoriums} from "@/data/sanatoriums.js";
 import Reviews from "@/components/Sanatorium/Reviews.vue";
 import Feedback from "@/components/Feedback.vue";
+import {getImageUrl} from "@/data/images.js";
 
 export default {
   name: "Sanatoriums",
   components: {Feedback, Reviews, Footer, Header},
   setup() {
-    return {sanatoriums}
+    return {sanatoriums, getImageUrl}
   },
   methods: {
-    getImageUrl(name) {
-      return new URL(`../assets/sanatoriums/${name}`, import.meta.url).href
-    }
+    // getImageUrl(name) {
+    //   return new URL(`../assets/sanatoriums/${name}`, import.meta.url).href
+    // }
   },
 }
 </script>
@@ -29,7 +30,7 @@ export default {
       <div class="sanatoriums-items">
         <div class="sanatoriums-item" v-for="item in sanatoriums">
           <div class="img-container">
-            <img :src="getImageUrl(item.img)" alt="фото санатория"/>
+            <img :src="getImageUrl('../assets/sanatoriums/', item.img)" alt="фото санатория"/>
           </div>
           <div class="name">
             Санаторий {{ item.name }}
@@ -81,6 +82,8 @@ export default {
 }
 .sanatoriums-item {
   max-width: 400px;
+  max-height: 430px;
+  height: 100%;
   width: 100%;
   border: 1px solid #D5D9E1;
   padding-bottom: 20px;
@@ -194,6 +197,10 @@ export default {
 @media (max-width: 511px) {
   .sanatoriums-item {
     margin: 0px 0px 20px 0px;
+  }
+
+  .sanatoriums-header {
+    text-align: center;
   }
 
 }

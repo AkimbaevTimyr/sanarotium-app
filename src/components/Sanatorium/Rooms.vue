@@ -33,9 +33,11 @@ export default {
       e.stopPropagation();
       this.modal = true;
       this.currentRoomId = roomId
+      document.body.classList.add('modal-open');
     },
     closeModal() {
       this.modal = false;
+      document.body.classList.remove('modal-open');
     }
   },
   computed: {
