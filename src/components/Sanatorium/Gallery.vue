@@ -57,7 +57,7 @@ export default {
 <template>
   <div class="sanatorium-gallery">
     <div class="sanatorium-gallery-left">
-      <img alt="123" :src="getImageUrl('../assets/sanatoriums/', mainImg)" />
+      <img alt="123" :src="getImageUrl('../assets/sanatoriums', mainImg)" />
     </div>
     <div class="sanatorium-gallery-right">
       <div v-for="img in galleryImages" @click="handleClick(img)" style="cursor: pointer">
