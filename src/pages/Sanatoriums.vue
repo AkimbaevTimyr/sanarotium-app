@@ -10,12 +10,12 @@ export default {
   name: "Sanatoriums",
   components: {Feedback, Reviews, Footer, Header},
   setup() {
-    return {sanatoriums, getImageUrl}
+    return {sanatoriums}
   },
   methods: {
-    // getImageUrl(name) {
-    //   return new URL(`../assets/sanatoriums/${name}`, import.meta.url).href
-    // }
+    getImageUrl(name) {
+      return new URL(`../assets/sanatoriums/${name}`, import.meta.url).href
+    }
   },
 }
 </script>
@@ -30,7 +30,7 @@ export default {
       <div class="sanatoriums-items">
         <div class="sanatoriums-item" v-for="item in sanatoriums">
           <div class="img-container">
-            <img :src="getImageUrl('../assets/sanatoriums/', item.img)" alt="фото санатория"/>
+            <img :src="getImageUrl(item.img)" alt="фото санатория"/>
           </div>
           <div class="name">
             Санаторий {{ item.name }}

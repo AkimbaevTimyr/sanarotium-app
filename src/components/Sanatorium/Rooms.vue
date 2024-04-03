@@ -158,7 +158,7 @@ export default {
           </div>
         </div>
         <div>
-          <button @click="modal = !modal" class="modal_button">
+          <button @click="closeModal" class="modal_button">
             <svg id="cross-thin-white" width="25px" height="25px">
               <svg id="cross-thin-base" viewBox="0 0 40 40" fill="#333333">
                 <path fill-rule="evenodd" d="M2.493 0L0 2.493 17.507 20 0 37.507 2.493 40 20 22.493 37.507 40 40 37.507 22.493 20 40 2.493 37.507 0 20 17.507 2.493 0z"/>

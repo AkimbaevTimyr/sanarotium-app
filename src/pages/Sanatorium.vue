@@ -9,7 +9,6 @@ import Rooms from "@/components/Sanatorium/Rooms.vue";
 import Reviews from "@/components/Sanatorium/Reviews.vue";
 import {sanatoriums} from "@/data/sanatoriums.js";
 import {rooms} from "@/data/rooms.js";
-import {getImageUrl} from "@/data/images.js";
 
   export default {
     name: 'Sanatorium',
@@ -22,8 +21,13 @@ import {getImageUrl} from "@/data/images.js";
         gallery
       }
     },
+    methods: {
+      getImageUrl(name) {
+        return new URL(`../assets/${name}`, import.meta.url).href
+      }
+    },
     setup() {
-      return {sanatoriums, rooms, getImageUrl}
+      return {sanatoriums, rooms}
     },
     computed: {
       id() {
@@ -87,7 +91,7 @@ import {getImageUrl} from "@/data/images.js";
             <div class="sanatorium-rooms-items">
               <div class="sanatorium-rooms-item" v-for="room in roomsItems">
                 <div>
-                  <img :src="getImageUrl('../assets', room.img)" alt="room-img" />
+                  <img :src="getImageUrl(room.img)" alt="room-img" />
                 </div>
                 <div class="sanatorium-rooms-item-info">
                   <div class="price">

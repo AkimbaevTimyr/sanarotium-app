@@ -2,7 +2,6 @@
 import VuePictureSwipe from "vue3-picture-swipe";
 import {galleryImages} from "@/data/images.js";
 import {vOnClickOutside} from "@vueuse/components";
-import {getImageUrl} from "@/data/images.js";
 
 export default {
   name: "Gallery",
@@ -31,7 +30,6 @@ export default {
   setup() {
     return {
       galleryImages,
-      getImageUrl
     }
   },
   methods: {
@@ -54,6 +52,12 @@ export default {
       const img = this.$refs.modalImage;
       this.modalWidth = img.naturalWidth;
       this.modalHeight = img.naturalHeight;
+    },
+    getImageSanatoriumsUrl(name) {
+      return new URL(`../../assets/sanatoriums/${name}`, import.meta.url).href
+    },
+    getImageUrl(name) {
+      return new URL(`../../assets/${name}`, import.meta.url).href
     }
   },
   computed: {
@@ -68,14 +72,14 @@ export default {
 <template>
   <div class="sanatorium-gallery">
     <div class="sanatorium-gallery-left">
-      <img alt="123" :src="getImageUrl('../assets/sanatoriums', mainImg)" />
+      <img alt="123" :src="getImageSanatoriumsUrl(mainImg)" />
     </div>
     <div class="sanatorium-gallery-right">
       <div v-for="img in galleryImages" @click="handleClick(img)" style="cursor: pointer">
         <img
             class="sanatorium-gallery-right-img img-odd"
             alt="123"
-            :src="getImageUrl('../assets/', img.src)"
+            :src="getImageUrl(img.src)"
         >
       </div>
     </div>
@@ -95,7 +99,7 @@ export default {
                     ref="modalImage"
                     @load="updateModalSize"
                     class="modal-image"
-                    :src="getImageUrl('../assets/', currentImg)"
+                    :src="getImageUrl(currentImg)"
                     alt="Room Image"
                 >
             </Transition>
