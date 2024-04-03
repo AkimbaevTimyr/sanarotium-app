@@ -48,14 +48,14 @@ export default {
         </div>
         <div class="footer_items_social">
           <div class="footer_item">
-            <a href="#">
+            <a target="_blank" href="https://www.facebook.com/share/GXFMBDBDfGidZQmL/?mibextid=hu50Ix">
               <svg id="facebook" viewBox="0 0 19 40" fill="#0C9EE4" width="29" height="29">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M4.11 7.747v5.506H0v6.734h4.11V40h8.435V19.987H18.2s.529-3.227.786-6.76h-6.414v-4.6c0-.694.922-1.614 1.83-1.614H19V0h-6.238c-8.843 0-8.64 6.747-8.64 7.747H4.11Z"/>
               </svg>
             </a>
           </div>
           <div class="footer_item">
-            <a href="#">
+            <a target="_blank" href="https://www.instagram.com/naftalanium?igsh=eWZsdXJpbHBsaGJh&utm_source=qr">
               <svg id="instagram" viewBox="0 0 40 40" width="29" height="29" fill="#0C9EE4">
                 <g fill-rule="evenodd" clip-rule="evenodd">
                   <path d="M12.316 2.72c-5.31 0-9.604 4.532-9.604 10.085v14.164c0 5.552 4.294 10.085 9.604 10.085h15.368c5.31 0 9.604-4.533 9.604-10.085V12.804c0-5.552-4.294-10.084-9.604-10.084H12.316ZM27.684 40H12.316C5.536 40 0 34.221 0 27.082V12.918C0 5.779 5.537 0 12.316 0h15.368C34.464 0 40 5.779 40 12.918v14.164C40 34.221 34.463 40 27.684 40Z"/>

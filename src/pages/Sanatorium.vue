@@ -303,6 +303,12 @@ import {rooms} from "@/data/rooms.js";
   }
 }
 
+@media (max-width: 1200px) {
+  .sanatorium-rooms-items {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 500px) {
   .sanatorium-header {
     flex-direction: column;

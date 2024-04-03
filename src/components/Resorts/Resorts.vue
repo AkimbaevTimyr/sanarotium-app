@@ -138,6 +138,7 @@ export default {
 
     .resorts_title {
       font-size: 1.7em;
+      text-align: center;
     }
 
   }

@@ -81,7 +81,6 @@ export default {
 }
 .sanatoriums-item {
   max-width: 400px;
-  max-height: 430px;
   min-height: 430px;
   width: 100%;
   border: 1px solid #D5D9E1;
@@ -191,6 +190,12 @@ export default {
 
 .sanatoriums-item:hover .name {
   color: black;
+}
+
+@media (max-width: 1245px) {
+  .sanatoriums-header {
+    text-align: center;
+  }
 }
 
 @media (max-width: 511px) {

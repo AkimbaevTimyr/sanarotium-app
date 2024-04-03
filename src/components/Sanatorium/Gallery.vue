@@ -151,6 +151,10 @@ export default {
   height: 100%;
 }
 
+.sanatorium-gallery-left img {
+  border-radius: 3px;
+}
+
 .sanatorium-gallery-right {
   display: flex;
   flex-wrap: wrap;
@@ -163,6 +167,7 @@ export default {
   width: 100%;
   max-height: 128px;
   height: 100%;
+  min-height: 128px;
 }
 
 .sanatorium-gallery-left img {
@@ -173,10 +178,31 @@ export default {
 }
 
 .img-container {
+  position: relative;
   max-width: 175px;
   width: 100%;
   max-height: 128px;
   height: 100%;
+}
+
+.img-container img {
+  border-radius: 3px;
+}
+
+.img-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2); /* Прозрачный белый цвет */
+  opacity: 0; /* Начальная прозрачность */
+  transition: opacity 0.3s ease; /* Добавляем плавное изменение прозрачности */
+}
+
+.img-container:hover::before {
+  opacity: 1; /* Увеличиваем прозрачность при наведении */
 }
 
 .modal {
@@ -261,6 +287,12 @@ export default {
   }
 }
 
+@media (max-width: 1180px) {
+  .img-container {
+    margin-bottom: 10px;
+  }
+}
+
 @media (max-width: 1100px) {
   .sanatorium-gallery-left{
     min-width: 80%;
@@ -276,6 +308,13 @@ export default {
     margin-left: 0px;
   }
 }
+
+@media (max-width: 578px) {
+  .img-odd {
+    margin-left: 0;
+  }
+}
+
 
 .fade-enter-active,
 .fade-leave-active {

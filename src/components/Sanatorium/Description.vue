@@ -34,7 +34,83 @@ export default {
     <div class="sanatorium-desc-text" v-html="description.replace(/\n/g, '<br>')">
     </div>
     <div class="sanatorium-desc-expert">
-<!--      тут должно быть мнение эксперта-->
+      <div class="sanatorium-desc-expert-title">
+        Какие болезни лечит нафталан?
+      </div>
+      <ul class="sanatorium-desc-list expert-list">
+        <li>
+          <span>
+            <svg id="check-thin-blue" width="15px" height="15px">
+               <svg id="check-thin-base" viewBox="0 0 40 33" fill="#0C9EE4">
+                  <path fill-rule="evenodd" d="M0 19.933l3.267-4.027 10.147 8.933L36.08 0 40 3.853l-25.64 28.8L0 19.933z"/>
+               </svg>
+            </svg>
+          </span>
+          <p>
+            Болезни суставов
+          </p>
+        </li>
+        <li>
+          <span>
+            <svg id="check-thin-blue" width="15px" height="15px">
+               <svg id="check-thin-base" viewBox="0 0 40 33" fill="#0C9EE4">
+                  <path fill-rule="evenodd" d="M0 19.933l3.267-4.027 10.147 8.933L36.08 0 40 3.853l-25.64 28.8L0 19.933z"/>
+               </svg>
+            </svg>
+          </span>
+          <p>
+            Кожные болезни
+          </p>
+        </li>
+        <li>
+          <span>
+            <svg id="check-thin-blue" width="15px" height="15px">
+               <svg id="check-thin-base" viewBox="0 0 40 33" fill="#0C9EE4">
+                  <path fill-rule="evenodd" d="M0 19.933l3.267-4.027 10.147 8.933L36.08 0 40 3.853l-25.64 28.8L0 19.933z"/>
+               </svg>
+            </svg>
+          </span>
+          <p>
+            Урологические болезни
+          </p>
+        </li>
+        <li>
+          <span>
+            <svg id="check-thin-blue" width="15px" height="15px">
+               <svg id="check-thin-base" viewBox="0 0 40 33" fill="#0C9EE4">
+                  <path fill-rule="evenodd" d="M0 19.933l3.267-4.027 10.147 8.933L36.08 0 40 3.853l-25.64 28.8L0 19.933z"/>
+               </svg>
+            </svg>
+          </span>
+          <p>
+            Болезни нервной системы
+          </p>
+        </li>
+        <li>
+          <span>
+            <svg id="check-thin-blue" width="15px" height="15px">
+               <svg id="check-thin-base" viewBox="0 0 40 33" fill="#0C9EE4">
+                  <path fill-rule="evenodd" d="M0 19.933l3.267-4.027 10.147 8.933L36.08 0 40 3.853l-25.64 28.8L0 19.933z"/>
+               </svg>
+            </svg>
+          </span>
+          <p>
+            Гинекологические болезни
+          </p>
+        </li>
+        <li>
+          <span>
+            <svg id="check-thin-blue" width="15px" height="15px">
+               <svg id="check-thin-base" viewBox="0 0 40 33" fill="#0C9EE4">
+                  <path fill-rule="evenodd" d="M0 19.933l3.267-4.027 10.147 8.933L36.08 0 40 3.853l-25.64 28.8L0 19.933z"/>
+               </svg>
+            </svg>
+          </span>
+          <p>
+            Болезни уха, горла, носа
+          </p>
+        </li>
+      </ul>
     </div>
   </div>
 
@@ -81,6 +157,21 @@ export default {
 .sanatorium-desc-list ul span {
   padding-top: 3px;
 }
+
+.sanatorium-desc-expert {
+
+}
+
+.expert-list li {
+  align-items: center;
+  justify-content: center;
+}
+.sanatorium-desc-expert-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
 
 @media (max-width: 767px) {
   .sanatorium-desc-text {
