@@ -4,7 +4,6 @@ import Footer from "@/components/Footer.vue";
 import {sanatoriums} from "@/data/sanatoriums.js";
 import Reviews from "@/components/Sanatorium/Reviews.vue";
 import Feedback from "@/components/Feedback.vue";
-import {getImageUrl} from "@/data/images.js";
 
 export default {
   name: "Sanatoriums",
@@ -83,7 +82,7 @@ export default {
 .sanatoriums-item {
   max-width: 400px;
   max-height: 430px;
-  height: 100%;
+  min-height: 430px;
   width: 100%;
   border: 1px solid #D5D9E1;
   padding-bottom: 20px;

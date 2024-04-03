@@ -24,7 +24,7 @@ export default {
       modal,
       currentImg,
       modalHeight,
-      modalWidth
+      modalWidth,
     }
   },
   setup() {
@@ -64,6 +64,9 @@ export default {
     indexImg() {
       const img = this.galleryImages.find(el => el.src === this.currentImg)
       return this.galleryImages.indexOf(img);
+    },
+    imgTotalCount() {
+      return galleryImages.length;
     }
   }
 }
@@ -75,9 +78,9 @@ export default {
       <img alt="123" :src="getImageSanatoriumsUrl(mainImg)" />
     </div>
     <div class="sanatorium-gallery-right">
-      <div v-for="img in galleryImages" @click="handleClick(img)" style="cursor: pointer">
+      <div class="img-container img-odd" v-for="img in galleryImages" @click="handleClick(img)" style="cursor: pointer">
         <img
-            class="sanatorium-gallery-right-img img-odd"
+            class="sanatorium-gallery-right-img"
             alt="123"
             :src="getImageUrl(img.src)"
         >
@@ -114,8 +117,9 @@ export default {
             </div>
           </div>
           <div class="gallery-modal-buttons">
-            <div @click="previousImg()" class="switcher-color">Предыдущая</div>
-            <div @click="nextImg()" class="switcher-color">Следующая</div>
+            <button :disabled="indexImg === 0" @click="previousImg()" class="switcher-color">Предыдущая</button>
+            <div>   {{ ++indexImg }} / {{ imgTotalCount }}   </div>
+            <button :disabled="++indexImg === imgTotalCount" @click="nextImg()" class="switcher-color">Следующая</button>
           </div>
       </div>
     </div>
@@ -137,7 +141,6 @@ export default {
 }
 
 .img-odd {
-  margin-bottom: 16px;
   margin-right: 6px;
 }
 
@@ -166,6 +169,13 @@ export default {
   max-width: 900px;
   max-height: 400px;
   width: 100%;
+  height: 100%;
+}
+
+.img-container {
+  max-width: 175px;
+  width: 100%;
+  max-height: 128px;
   height: 100%;
 }
 
@@ -205,7 +215,6 @@ export default {
 
 .switcher-color {
   color:  black;
-  cursor: pointer;
   font-size: 20px;
 }
 
@@ -228,6 +237,7 @@ export default {
 .gallery-modal-buttons{
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 15px;
 }
 

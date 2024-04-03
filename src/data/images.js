@@ -2,7 +2,6 @@ export function getImageUrl(path, name) {
     return new URL(`${path}/${name}`, import.meta.url).href
 }
 
-
 export const galleryImages = [
     {
         src: "city.jpeg"
@@ -11,15 +10,15 @@ export const galleryImages = [
         src: "people.jpeg"
     },
     {
-        src: "city.jpeg"
+        src: "room.jpeg"
     },
     {
-        src: "people.jpeg"
+        src: "president.jpeg"
     },
     {
-        src: "city.jpeg"
+        src: "materials.png"
     },
     {
-        src: "people.jpeg"
+        src: "two-person-standart.jpeg"
     },
 ]
