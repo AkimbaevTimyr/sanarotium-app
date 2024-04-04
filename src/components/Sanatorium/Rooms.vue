@@ -157,7 +157,7 @@ export default {
             </div>
           </div>
         </div>
-        <div>
+        <div class="modal-button-container">
           <button @click="closeModal" class="modal_button">
             <svg id="cross-thin-white" width="25px" height="25px">
               <svg id="cross-thin-base" viewBox="0 0 40 40" fill="#333333">
@@ -359,6 +359,21 @@ export default {
     max-width: 900px; /* Максимальная ширина модального окна */
     width: 90%; /* Ширина модального окна */
     z-index: 1001; /* Убедитесь, что модальное окно находится выше фона */
+}
+
+@media (max-width: 935px) {
+  .modal-window {
+    max-height: 660px;
+    overflow: auto;
+  }
+  .room-modal-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal-button-container {
+    position: absolute;
+    right: 60px;
+  }
 }
 
 @media (max-width: 767px) {

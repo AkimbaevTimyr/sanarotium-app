@@ -2,7 +2,7 @@
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import {sanatoriums} from "@/data/sanatoriums.js";
-import Reviews from "@/components/Sanatorium/Reviews.vue";
+import Reviews from "@/components/Reviews.vue";
 import Feedback from "@/components/Feedback.vue";
 
 export default {
@@ -84,6 +84,7 @@ export default {
   min-height: 430px;
   width: 100%;
   border: 1px solid #D5D9E1;
+  padding-bottom: 20px;
   padding-bottom: 20px;
   cursor: pointer;
   margin: 0px 15px 20px 0px;

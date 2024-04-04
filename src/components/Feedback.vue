@@ -92,7 +92,7 @@ export default {
           </div>
         </div>
         <div class="references_button">
-          Показать все отзывы о компании
+          <router-link to="/reviews" class="overlay">Показать все отзывы о компании</router-link>
         </div>
       </div>
     </div>
@@ -285,6 +285,7 @@ export default {
   }
   .references_items {
     display: block;
+    margin-bottom: 30px;
   }
   .references_item {
     margin-bottom: 20px;

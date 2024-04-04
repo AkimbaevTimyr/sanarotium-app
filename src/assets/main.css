@@ -30,6 +30,10 @@
 
 }
 
+.resorts_item:hover .img-container img {
+    transform: scale(1.05)
+}
+
 .link:hover {
     border-bottom: 2px solid #337ab7;
     transition: ease-in;

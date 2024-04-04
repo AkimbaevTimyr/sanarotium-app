@@ -6,7 +6,7 @@ import Description from "@/components/Sanatorium/Description.vue";
 import Service from "@/components/Sanatorium/Service.vue";
 import Gallery from "@/components/Sanatorium/Gallery.vue";
 import Rooms from "@/components/Sanatorium/Rooms.vue";
-import Reviews from "@/components/Sanatorium/Reviews.vue";
+import Reviews from "@/components/Reviews.vue";
 import {sanatoriums} from "@/data/sanatoriums.js";
 import {rooms} from "@/data/rooms.js";
 

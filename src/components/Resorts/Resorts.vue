@@ -26,7 +26,7 @@ export default {
           :desc="'CHINAR HOTEL & SPA NAFTALAN, известный в советское время как Санаторий Чинар расположен на территории огромного парка из сосен и чинаров. В тенистых аллеях парка создана прекрасная комфортная обстановка для отдыха и лечения.'"
       >
         <template v-slot:img>
-          <a  href="sanatorium/Чинар/1">
+          <a class="img-container" href="sanatorium/Чинар/1">
             <img src="../../assets/sanatoriums/sanatorium-img.jpeg" class="resort_img" alt="resort"/>
           </a>
         </template>
@@ -38,7 +38,7 @@ export default {
           :desc="'GARABAG RESORT & SPA расположился на прекрасной и ухоженной территории, в курортной местности Нафталан, сыскавшей всемирную славу благодаря уникальному месторождению нафталанового масла, известного более 600 лет своими лечебными свойствами.'"
       >
         <template v-slot:img>
-          <a href="sanatorium/GARABAG%20RESORT%20&%20SPA/4">
+          <a class="img-container" href="sanatorium/GARABAG%20RESORT%20&%20SPA/4">
             <img src="../../assets/sanatoriums/garabag.jpeg" class="resort_img" alt="resort"/>
           </a>
         </template>
@@ -50,7 +50,7 @@ export default {
           :desc="'Санаторий Нафталан был открыт в мае 2005 года. Это первое частное лечебное учреждение, открытое на курорте Нафталан в Азербайджане. Функционирует и принимает на лечение всех желающих круглый год. '"
       >
         <template v-slot:img>
-          <a href="sanatorium/НАФТАЛАН/2">
+          <a class="img-container" href="sanatorium/НАФТАЛАН/2">
             <img src="../../assets/sanatoriums/naftalan.jpeg" class="resort_img" alt="resort"/>
           </a>
         </template>
@@ -111,7 +111,16 @@ export default {
     font-weight: 300;
     margin-bottom: 40px;
   }
-  
+
+  .img-container {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .img-container img {
+    transition: transform 0.3s ease
+  }
+
   @media (max-width: 940px) {
     .resorts_items {
       padding: 30px;
